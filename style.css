@@ -1,0 +1,154 @@
+/* ---------- Root & Fonts ---------- */
+:root{
+  --navy: #0e2b3d;
+  --antique: antiquewhite;
+  --muted: #7a7a7a;
+  --card: #ffffff;
+  --glass: rgba(255,255,255,0.88);
+  --accent: #bdb3a6;
+  --shadow: 0 14px 40px rgba(14,43,61,0.12);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  background:var(--antique);
+  color:#111;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.55;
+}
+
+/* ---------- Container ---------- */
+.container{width:92%;max-width:1200px;margin:0 auto}
+
+/* ---------- Header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:60;
+  background:linear-gradient(90deg,var(--navy), #0b2130);
+  color:var(--antique); box-shadow:0 6px 18px rgba(0,0,0,0.12);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.logo-img{width:60px;height:60px;object-fit:contain;border-radius:8px;background:var(--antique);padding:6px}
+.brand-text h1{font-family:"Playfair Display",serif;margin:0;font-size:20px}
+.sub{font-size:12px;color:var(--accent);margin-top:4px}
+
+/* Nav */
+.main-nav{display:flex;gap:18px;align-items:center}
+.main-nav a{color:var(--antique);text-decoration:none;font-weight:600;font-size:14px;opacity:.95;transition:opacity .18s}
+.main-nav a:hover{opacity:1;color:var(--accent)}
+.nav-toggle{display:none;background:transparent;border:0}
+.hamburger{width:24px;height:2px;background:var(--antique);display:block;position:relative}
+.hamburger::after,.hamburger::before{content:"";position:absolute;left:0;width:24px;height:2px;background:var(--antique)}
+.hamburger::before{top:-7px}
+.hamburger::after{top:7px}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:72vh;display:flex;align-items:center;padding:30px 0;overflow:hidden}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.85);transform:scale(1.02)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(120deg, rgba(14,43,61,0.78), rgba(14,43,61,0.25))}
+.hero-content{position:relative;z-index:3;color:var(--antique);padding:70px 0}
+.hero-title{font-family:"Playfair Display",serif;font-size:44px;line-height:1.02;margin:0 0 14px}
+.hero-sub{max-width:780px;font-size:18px;color:rgba(255,255,255,0.95);margin-bottom:18px}
+.hero-actions{display:flex;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:8px;text-decoration:none;border:0;cursor:pointer;font-weight:700}
+.btn-primary{background:var(--antique);color:var(--navy);box-shadow:var(--shadow)}
+.btn-ghost{background:transparent;color:var(--antique);border:1px solid rgba(255,255,255,0.12)}
+.quick-stats{display:flex;gap:18px;margin-top:22px}
+.quick-stats div{background:rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:var(--antique);font-size:13px}
+
+/* ---------- Sections ---------- */
+.section{padding:52px 0}
+.section-head{text-align:center;margin-bottom:18px}
+.section-head h3{font-family:"Playfair Display",serif;font-size:26px;margin-bottom:6px}
+.divider{height:4px;width:84px;background:var(--muted);margin:6px auto 18px;border-radius:8px}
+.lead{font-size:15px;color:var(--muted);max-width:900px;margin:0 auto}
+
+/* ---------- Cards & Grids ---------- */
+.card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 8px 30px rgba(10,10,10,0.06);transition:transform .28s, box-shadow .28s}
+.card:hover{transform:translateY(-6px)}
+.about-grid{display:grid;grid-template-columns:1fr 420px;gap:26px;align-items:center}
+.about-image img{width:100%;height:100%;object-fit:cover;border-radius:10px}
+
+/* Products */
+.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:8px}
+.product{display:flex;flex-direction:column;gap:10px}
+.product-media img{width:100%;height:210px;object-fit:cover;border-radius:10px}
+.product-body h4{font-family:"Playfair Display",serif;margin:0;color:var(--navy)}
+.product-body p{color:var(--muted);margin:6px 0}
+.link-more{background:transparent;border:0;color:var(--navy);text-decoration:underline;cursor:pointer;font-weight:700}
+
+/* Applications */
+.apps-wrap{margin-top:22px}
+.subhead{font-family:"Playfair Display",serif;color:var(--navy);margin-bottom:8px}
+.apps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.app ul{padding-left:18px;color:#333}
+
+/* Features */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}
+.feature{display:flex;gap:12px;align-items:flex-start}
+.feat-icon{width:48px;height:48px;border-radius:10px;background:linear-gradient(180deg,#f8f6f2,#faf8f5);display:flex;align-items:center;justify-content:center;color:var(--navy);box-shadow:0 6px 20px rgba(0,0,0,.04)}
+.feature strong{display:block}
+.feature p{margin:6px 0 0;color:var(--muted)}
+
+/* Projects */
+.projects-grid{display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start}
+.project-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}
+.project-gallery img{width: 250px;height:170px;object-fit:cover;border-radius:8px;cursor:pointer;transition:transform .2s}
+.project-gallery img:hover{transform:scale(1.03)}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 420px;gap:18px;align-items:start}
+.map-embed{width:100%;height:260px;border-radius:10px;border:0}
+
+/* Footer */
+.site-footer{background:var(--navy);color:var(--antique);padding:18px 0;margin-top:32px;text-align:center}
+.site-footer .small{color:var(--accent)}
+
+/* ---------- Modal ---------- */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(7,9,11,0.5);visibility:hidden;opacity:0;transition:all .18s;z-index:90}
+.modal.show{visibility:visible;opacity:1}
+.modal-card{width:92%;max-width:920px;background:var(--card);border-radius:12px;padding:18px;box-shadow:0 30px 80px rgba(4,12,20,0.35)}
+.modal-contents{display:flex;gap:18px;align-items:flex-start}
+.modal-contents img{width:48%;height:360px;object-fit:cover;border-radius:10px}
+.modal-info h4{margin:0 0 8px;font-family:"Playfair Display",serif}
+.modal-info p{color:var(--muted)}
+
+/* ---------- Lightbox ---------- */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.9);display:flex;align-items:center;justify-content:center;visibility:hidden;opacity:0;transition:opacity .18s;z-index:120}
+.lightbox.show{visibility:visible;opacity:1}
+.lightbox img{max-width:92%;max-height:86vh;border-radius:8px}
+.lb-close,.lb-prev,.lb-next{position:fixed;background:transparent;border:0;color:#fff;font-size:30px;cursor:pointer}
+.lb-close{top:26px;right:28px}
+.lb-prev{left:18px;top:50%;transform:translateY(-50%);font-size:36px}
+.lb-next{right:18px;top:50%;transform:translateY(-50%);font-size:36px}
+
+/* ---------- Floating WhatsApp ---------- */
+.floating-wa{
+  position:fixed;right:20px;bottom:18px;background:#25D366;color:#fff;border-radius:64px;padding:12px 16px;display:flex;align-items:center;gap:10px;box-shadow:0 14px 36px rgba(37,211,102,0.18);text-decoration:none;z-index:100 }
+.floating-wa span{font-weight:800}
+
+/* ---------- Responsive ---------- */
+@media (max-width:980px){
+  .main-nav{display:none;position:absolute;top:74px;right:6%;flex-direction:column;background:linear-gradient(180deg,var(--navy), #0b2130);padding:12px;border-radius:8px;gap:10px}
+  .nav-toggle{display:block}
+  .about-grid,.projects-grid,.contact-grid{grid-template-columns:1fr}
+  .modal-contents{flex-direction:column}
+  .modal-contents img{width:100%;height:280px}
+  .hero-title{font-size:32px}
+  .quick-stats{display:none}
+  .project-gallery img{height:120px}
+}
+@media (max-width:520px){
+  .hero-sub{font-size:15px}
+  .project-gallery img{height:100px}
+}
+@media (max-width:400px){
+  .hero-title{font-size:26px}
+  .btn{padding:10px 14px;font-size:14px}
+  .btn-primary{font-weight:600}
+  .btn-ghost{font-size:13px}
+}
